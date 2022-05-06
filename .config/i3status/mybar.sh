@@ -35,18 +35,6 @@ common() {
   echo -n "\"border_right\":0"
 }
 
-mycrypto() {
-  local bg="#FFD180"
-  separator $bg $bg_bar_color
-  echo -n ",{"
-  echo -n "\"name\":\"id_crypto\","
-  echo -n "\"full_text\":\" $(/home/$USER/.config/i3status/crypto.py) \","
-  echo -n "\"color\":\"#000000\","
-  echo -n "\"background\":\"$bg\","
-  common
-  echo -n "},"
-}
-
 myip_public() {
   local bg="#1976D2"
   separator $bg "#FFD180"
@@ -59,39 +47,42 @@ myip_public() {
 }
 
 myvpn_on() {
-  local bg="#424242" # grey darken-3
+  local bg="#44475a"
   local icon=""
   if [ -d /proc/sys/net/ipv4/conf/proton0 ]; then
-    bg="#E53935" # rouge
+    bg="#ff5555"
     icon=""
   fi
-  separator $bg "#1976D2" # background left previous block
+  separator $bg "#282a36"
   bg_separator_previous=$bg
   echo -n ",{"
   echo -n "\"name\":\"id_vpn\","      
   echo -n "\"full_text\":\" ${icon} VPN \","
+  echo -n "\"color\":\"#f8f8f2\","
   echo -n "\"background\":\"$bg\","
   common
   echo -n "},"
 }
 
 myip_local() {
-  local bg="#2E7D32" # vert
-  separator $bg $bg_separator_previous
+  local bg="#50fa7b"
+  separator $bg "#44475a"
   echo -n ",{"
   echo -n "\"name\":\"ip_local\","
   echo -n "\"full_text\":\"  $(ip route get 1 | sed -n 's/.*src \([0-9.]\+\).*/\1/p') \","
+  echo -n "\"color\":\"#282a36\","
   echo -n "\"background\":\"$bg\","
   common
   echo -n "},"
 }
 
 disk_usage() {
-  local bg="#3949AB"
-  separator $bg "#2E7D32"
+  local bg="#8be9fd"
+  separator $bg "#50fa7b"
   echo -n ",{"
   echo -n "\"name\":\"id_disk_usage\","
-  echo -n "\"full_text\":\"  $(/home/$USER/.config/i3status/disk.py)%\","
+  echo -n "\"full_text\":\"  $(/home/$USER/.config/i3status/disk.py)%\","
+  echo -n "\"color\":\"#282a36\","
   echo -n "\"background\":\"$bg\","
   common
   echo -n "}"
@@ -100,8 +91,9 @@ disk_usage() {
 memory() {
   echo -n ",{"
   echo -n "\"name\":\"id_memory\","
-  echo -n "\"full_text\":\"  $(/home/$USER/.config/i3status/memory.py)%\","
-  echo -n "\"background\":\"#3949AB\","
+  echo -n "\"full_text\":\"  $(/home/$USER/.config/i3status/memory.py)%\","
+  echo -n "\"color\":\"#282a36\","
+  echo -n "\"background\":\"#8be9fd\","
   common
   echo -n "}"
 }
@@ -109,30 +101,20 @@ memory() {
 cpu_usage() {
   echo -n ",{"
   echo -n "\"name\":\"id_cpu_usage\","
-  echo -n "\"full_text\":\"  $(/home/$USER/.config/i3status/cpu.py)% \","
-  echo -n "\"background\":\"#3949AB\","
-  common
-  echo -n "},"
-}
-
-meteo() {
-  local bg="#546E7A"
-  separator $bg "#3949AB"
-  echo -n ",{"
-  echo -n "\"name\":\"id_meteo\","
-  echo -n "\"full_text\":\" $(/home/$USER/.config/i3status/meteo.py) \","
-  echo -n "\"background\":\"$bg\","
+  echo -n "\"full_text\":\"  $(/home/$USER/.config/i3status/cpu.py)% \","
+  echo -n "\"color\":\"#282a36\","
+  echo -n "\"background\":\"#8be9fd\","
   common
   echo -n "},"
 }
 
 mydate() {
-  local bg="#E0E0E0"
-  separator $bg "#546E7A"
+  local bg="#ff79c6"
+  separator $bg "#8be9fd"
   echo -n ",{"
   echo -n "\"name\":\"id_time\","
   echo -n "\"full_text\":\"  $(date "+%a %d/%m %H:%M") \","
-  echo -n "\"color\":\"#000000\","
+  echo -n "\"color\":\"#282a36\","
   echo -n "\"background\":\"$bg\","
   common
   echo -n "},"
@@ -140,8 +122,8 @@ mydate() {
 
 battery0() {
   if [ -f /sys/class/power_supply/BAT0/uevent ]; then
-    local bg="#D69E2E"
-    separator $bg "#E0E0E0"
+    local bg="#ffb86c"
+    separator $bg "#ff79c6"
     bg_separator_previous=$bg
     prct=$(cat /sys/class/power_supply/BAT0/uevent | grep "POWER_SUPPLY_CAPACITY=" | cut -d'=' -f2)
     charging=$(cat /sys/class/power_supply/BAT0/uevent | grep "POWER_SUPPLY_STATUS" | cut -d'=' -f2) # POWER_SUPPLY_STATUS=Discharging|Charging
@@ -152,17 +134,17 @@ battery0() {
     echo -n ",{"
     echo -n "\"name\":\"battery0\","
     echo -n "\"full_text\":\" ${icon} ${prct}% \","
-    echo -n "\"color\":\"#000000\","
+    echo -n "\"color\":\"#282a36\","
     echo -n "\"background\":\"$bg\","
     common
     echo -n "},"
   else
-    bg_separator_previous="#E0E0E0"
+    bg_separator_previous="#ff79c6"
   fi
 }
 
 volume() {
-  local bg="#673AB7"
+  local bg="#bd93f9"
   separator $bg $bg_separator_previous  
   vol=$(pamixer --get-volume)
   echo -n ",{"
@@ -172,6 +154,7 @@ volume() {
   else
     echo -n "\"full_text\":\"  ${vol}% \","
   fi
+  echo -n "\"color\":\"#282a36\","
   echo -n "\"background\":\"$bg\","
   common
   echo -n "},"
@@ -204,14 +187,11 @@ echo '[]'                   # We send an empty first array of blocks to make the
 (while :;
 do
 	echo -n ",["
-  mycrypto
-  myip_public
   myvpn_on
   myip_local
   disk_usage
   memory
   cpu_usage
-  meteo
   mydate
   battery0
   volume
@@ -243,21 +223,13 @@ do
   elif [[ $line == *"name"*"id_time"* ]]; then
     kitty -e /home/$USER/.config/i3status/click_time.sh &
 
-  # METEO
-  elif [[ $line == *"name"*"id_meteo"* ]]; then
-    xdg-open https://openweathermap.org/city/2986140 > /dev/null &
-
-  # CRYPTO
-  elif [[ $line == *"name"*"id_crypto"* ]]; then
-    xdg-open https://www.livecoinwatch.com/ > /dev/null &
-
   # VOLUME
   elif [[ $line == *"name"*"id_volume"* ]]; then
     kitty -e alsamixer &
 
   # LOGOUT
   elif [[ $line == *"name"*"id_logout"* ]]; then
-    i3-nagbar -t warning -m 'Log out ?' -b 'yes' 'i3-msg exit' > /dev/null &
+    i3-nagbar -t warning -m 'What do you want?' -B 'Shutdown' 'shutdown now' -B 'Reboot' 'systemctl reboot' -B 'Logout' 'i3-msg exit' > /dev/null &
 
   fi  
 done
