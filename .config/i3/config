@@ -18,8 +18,8 @@ gaps inner 5
 gaps outer 5
 
 # wallpaper variable
-set $wallpaper '/home/$USER/.wallpapers/hatsume.png'
-set $wallpaper_lock '/home/$USER/.wallpapers/hatsume.png'
+set $wallpaper '/home/eminboydak/.wallpapers/hatsume.png'
+set $wallpaper_lock '/home/eminboydak/.wallpapers/hatsume.png'
 
 # font
 font pango:monospace 8
