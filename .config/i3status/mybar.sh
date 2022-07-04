@@ -66,7 +66,7 @@ myvpn_on() {
 
 myip_local() {
   local bg="#50fa7b"
-  separator $bg "#44475a"
+  separator $bg $bg_separator_previous
   echo -n ",{"
   echo -n "\"name\":\"ip_local\","
   echo -n "\"full_text\":\"  $(ip route get 1 | sed -n 's/.*src \([0-9.]\+\).*/\1/p') \","
