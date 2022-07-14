@@ -141,7 +141,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # ctrl+alt+del
-bindsym Ctrl+$alt+Delete exec "i3-nagbar -t warning -m 'You pressed too much button! What do you really want?' -B 'Shutdown' 'shutdown now' -B 'Reboot' 'systemctl reboot' -B 'Logout' 'i3-msg exit'"
+bindsym Ctrl+$alt+Delete exec "i3-nagbar -t warning -m 'You pressed too much button! What do you really want?' -B 'Shutdown' 'shutdown now' -B 'Reboot' 'shutdown -r now' -B 'Logout' 'i3-msg exit'"
 
 # resize window
 mode "resize" {
