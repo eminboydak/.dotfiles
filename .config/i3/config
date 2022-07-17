@@ -22,7 +22,7 @@ set $wallpaper '/home/eminboydak/.wallpapers/hatsume.png'
 set $wallpaper_lock '/home/eminboydak/.wallpapers/hatsume.png'
 
 # font
-font pango:monospace 8
+font pango:FiraCode Retina 9
 
 # autostart - see also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
