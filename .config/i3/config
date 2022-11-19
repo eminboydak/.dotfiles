@@ -18,8 +18,8 @@ gaps inner 5
 gaps outer 5
 
 # wallpaper variable
-set $wallpaper '/home/eminboydak/.wallpapers/hatsume.png'
-set $wallpaper_lock '/home/eminboydak/.wallpapers/hatsume.png'
+set $wallpaper '/home/eminboydak/.wallpapers/kamado-tanjirou.png'
+set $wallpaper_lock '/home/eminboydak/.wallpapers/kamado-tanjirou.png'
 
 # font
 font pango:FiraCode Retina 9
@@ -164,24 +164,27 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # start i3bar and i3status to display a workspace bar
-bar {
-    position top
-    #status_command i3status --config ~/.i3status.conf
-    status_command exec /home/$USER/.config/i3status/mybar.sh
+#bar {
+#    position top
+#    #status_command i3status --config ~/.i3status.conf
+#    status_command exec /home/$USER/.config/i3status/mybar.sh
+#
+#    # dracula theme
+#    colors {
+#        background #282A36
+#        statusline #F8F8F2
+#        separator  #44475A
+#
+#        focused_workspace  #44475A #44475A #F8F8F2
+#        active_workspace   #282A36 #44475A #F8F8F2
+#        inactive_workspace #282A36 #282A36 #BFBFBF
+#        urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#        binding_mode       #FF5555 #FF5555 #F8F8F2
+#  }	
+#}
 
-    # dracula theme
-    colors {
-        background #282A36
-        statusline #F8F8F2
-        separator  #44475A
-
-        focused_workspace  #44475A #44475A #F8F8F2
-        active_workspace   #282A36 #44475A #F8F8F2
-        inactive_workspace #282A36 #282A36 #BFBFBF
-        urgent_workspace   #FF5555 #FF5555 #F8F8F2
-        binding_mode       #FF5555 #FF5555 #F8F8F2
-  }	
-}
+# start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # i3 dracula clor scheme
 # class                 border  bground text    indicator child_border
@@ -203,7 +206,7 @@ exec_always xrandr -s 1920x1080 -r 144
 exec_always feh --bg-fill $wallpaper
 
 # picom for transparency
-exec_always picom -i 0.8
+exec_always picom -i 0.85
 
 # taking screenshot
 bindsym Print exec --no-startup-id maim "/home/$USER/Resimler/Screenshots/$(date).png"
