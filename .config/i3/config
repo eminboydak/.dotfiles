@@ -18,8 +18,8 @@ gaps inner 5
 gaps outer 5
 
 # wallpaper variable
-set $wallpaper '/home/eminboydak/.wallpapers/kamado-tanjirou.png'
-set $wallpaper_lock '/home/eminboydak/.wallpapers/kamado-tanjirou.png'
+set $wallpaper '/home/eminboydak/.wallpapers/*'
+set $wallpaper_lock '/home/eminboydak/.wallpapers/017.jpg'
 
 # font
 font pango:FiraCode Retina 9
@@ -203,7 +203,7 @@ exec_always "setxkbmap -layout tr"
 exec_always xrandr -s 1920x1080 -r 144
 
 # set wallpaper
-exec_always feh --bg-fill $wallpaper
+exec_always feh --bg-fill --randomize /home/$USER/.wallpapers/*
 
 # picom for transparency
 exec_always picom -i 0.85
