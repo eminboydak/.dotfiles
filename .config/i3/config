@@ -19,7 +19,7 @@ gaps outer 5
 
 # wallpaper variable
 set $wallpaper '/home/eminboydak/.wallpapers/*'
-set $wallpaper_lock '/home/eminboydak/.wallpapers/017.jpg'
+set $wallpaper_lock '/home/eminboydak/.wallpapers/008.png'
 
 # font
 font pango:FiraCode Retina 9
@@ -57,9 +57,9 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # run rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $alt+Tab exec --no-startup-id rofi -show window
-
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
+bindsym $alt+Tab exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
+bindsym Ctrl+$alt+Delete exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
 
 # change focus
 bindsym $mod+Left focus left
@@ -143,9 +143,6 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# ctrl+alt+del
-bindsym Ctrl+$alt+Delete exec "i3-nagbar -t warning -m 'You pressed too much button! What do you really want?' -B 'Shutdown' 'shutdown now' -B 'Reboot' 'shutdown -r now' -B 'Logout' 'i3-msg exit'"
 
 # resize window
 mode "resize" {
