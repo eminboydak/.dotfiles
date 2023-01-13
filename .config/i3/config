@@ -203,7 +203,7 @@ exec_always xrandr -s 1920x1080 -r 144
 exec_always feh --bg-fill --randomize /home/$USER/.wallpapers/*
 
 # picom for transparency
-exec_always picom -i 0.85
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # taking screenshot
 bindsym Print exec --no-startup-id maim "/home/$USER/Resimler/Screenshots/$(date).png"

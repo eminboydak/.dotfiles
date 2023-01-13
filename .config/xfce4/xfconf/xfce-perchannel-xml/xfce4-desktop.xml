@@ -6,13 +6,17 @@
       <property name="monitorDisplayPort-0" type="empty">
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/eminboydak/.wallpapers/hatsume.png"/>
+          <property name="image-style" type="int" value="0"/>
+          <property name="last-image" type="string" value="/home/eminboydak/.wallpapers/001.png"/>
+          <property name="backdrop-cycle-enable" type="bool" value="true"/>
+          <property name="backdrop-cycle-random-order" type="bool" value="true"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-verticals.png"/>
+          <property name="image-style" type="int" value="1"/>
+          <property name="last-image" type="string" value="/home/eminboydak/.wallpapers/008.png"/>
+          <property name="backdrop-cycle-enable" type="bool" value="true"/>
+          <property name="backdrop-cycle-random-order" type="bool" value="true"/>
         </property>
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -51,6 +55,8 @@
         </property>
       </property>
     </property>
+    <property name="single-workspace-mode" type="bool" value="true"/>
+    <property name="single-workspace-number" type="int" value="1"/>
   </property>
   <property name="desktop-icons" type="empty">
     <property name="file-icons" type="empty">
