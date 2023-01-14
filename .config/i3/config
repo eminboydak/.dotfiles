@@ -14,8 +14,8 @@ set $alt Mod1
 # gaps and border
 for_window [class="^.*"] border pixel 2
 for_window [title="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
+gaps inner 8
+gaps outer 1
 
 # wallpaper variable
 set $wallpaper '/home/eminboydak/.wallpapers/*'
@@ -58,7 +58,7 @@ bindsym $mod+q kill
 
 # run rofi
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
-bindsym $alt+Tab exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
+# bindsym $alt+Tab exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
 bindsym Ctrl+$alt+Delete exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
 
 # change focus
