@@ -4,7 +4,19 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set softtabstop=4
+set mouse=v
 set mouse=a
+set nocompatible
+set showmatch
+set ignorecase
+set hlsearch
+set incsearch
+set expandtab
+set cc=80
+set clipboard=unnamedplus
+set cursorline
+set ttyfast
+set backupdir=~/.cache/vim
 
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
@@ -16,6 +28,9 @@ nmap <F8> :TagbarToggle<CR>
 "set completeopt=menu,menuone,noselect
 
 syntax on
+filetype plugin indent on
+filetype plugin on
+
 colorscheme dracula
 
 let g:NERDTreeDirArrowExpandable="+"

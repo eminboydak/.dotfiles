@@ -58,7 +58,6 @@ bindsym $mod+q kill
 
 # run rofi
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-4/launcher.sh
-# bindsym $alt+Tab exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
 bindsym Ctrl+$alt+Delete exec --no-startup-id ~/.config/rofi/powermenu/type-1/powermenu.sh
 
 # change focus
@@ -147,10 +146,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
 
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
