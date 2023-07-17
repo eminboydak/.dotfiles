@@ -1,3 +1,8 @@
+xterm*selectToClipboard: true
+xterm*disallowedWindowOps: 20,21,SetXProp
+*.font:	Monospace:pixelsize=25:antialias=true:autohint=true;
+*.alpha: 0.90
+
 ! Dracula Xresources palette
 *.foreground: #F8F8F2
 *.background: #282A36
