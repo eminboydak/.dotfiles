@@ -180,7 +180,7 @@ bindsym $mod+r mode "resize"
 #}
 
 # start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # i3 dracula clor scheme
 # class                 border  bground text    indicator child_border
