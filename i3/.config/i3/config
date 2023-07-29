@@ -216,3 +216,4 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 # auto usb mount
 exec udiskie --tray
+
