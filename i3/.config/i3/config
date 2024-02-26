@@ -76,22 +76,16 @@ bindsym $mod+shift+h exec systemctl hibernate
 bindsym $mod+Return exec kitty
 
 # Bluetooth device selector
-bindsym $mod+shift+b exec alacritty -e sh ~/scripts/btselect.sh
+bindsym $mod+shift+b exec kitty -e sh ~/scripts/bt-select.sh
 
 # Wireless network selector
-bindsym $mod+shift+w exec kitty -e sh ~/scripts/wifiselect.sh
-
-# IRC client
-bindsym $mod+shift+i exec kitty -e sh ~/scripts/weechat.sh
+bindsym $mod+shift+w exec kitty -e sh ~/scripts/wifi-select.sh
 
 # Lock the screen
 bindsym $mod+shift+l exec ~/scripts/lock.sh
 
 # Emoji selector
 bindsym $mod+shift+x exec ~/scripts/emoji-menu.sh
-
-# Copy GitHub access token
-bindsym $mod+shift+g exec ~/scripts/copy-gat.sh
 
 # Take a screenshot
 bindsym $mod+shift+o exec ~/scripts/capture.sh
