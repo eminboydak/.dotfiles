@@ -1,0 +1,87 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+# Font for Arch Linux logo: https://aur.archlinux.org/packages/ttf-nerd-fonts-symbols/
+
+general {
+    output_format = "i3bar"
+    colors = true
+    color_good = '#c8c093'
+    color_degraded = '#6a9589'
+    color_bad = '#3E3E38'
+    interval = 5
+}
+
+order += "ipv6"
+order += "ethernet _first_"
+order += "wireless _first_"
+order += "read_file updates"
+order += "battery all"
+order += "disk /"
+order += "disk /drv"
+order += "volume master"
+order += "load"
+order += "memory"
+order += "tztime local"
+
+ipv6 {
+    format_up = "IPv6: %ip"
+    format_down = "no IPv6"
+}
+
+ethernet _first_ {
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
+}
+
+wireless _first_ {
+    format_up = "W: %ip"
+    format_down = "W: down"
+}
+
+read_file updates {
+    format = "U: %content"
+    format_bad = "U: -"
+    path = "/var/local/updates/count"
+}
+
+battery all {
+    status_chr = "CHR"
+    status_bat = "BAT"
+    status_unk = "UNK"
+    format = "%status %percentage %remaining"
+	last_full_capacity = true
+}
+
+volume master {
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+	format = "%volume"
+}
+
+disk "/" {
+    format = "/:%avail"
+}
+
+disk "/drv" {
+    format = "/drv:%avail"
+}
+
+load {
+    format = "%5min"
+}
+
+memory {
+    format = "%used/%available"
+    threshold_degraded = "1G"
+    format_degraded = "%available"
+}
+
+tztime local {
+    format = "%d-%m-%Y %H:%M:%S "
+}
