@@ -10,10 +10,10 @@
 general {
     output_format = "i3bar"
     colors = true
-    color_good = '#c8c093'
-    color_degraded = '#6a9589'
-    color_bad = '#3E3E38'
-    interval = 5
+    color_good = '#a6e3a1'
+    color_degraded = '#f38ba8'
+    color_bad = '#585b70'
+    interval = 1
 }
 
 order += "ipv6"
@@ -22,7 +22,6 @@ order += "wireless _first_"
 order += "read_file updates"
 order += "battery all"
 order += "disk /"
-order += "disk /drv"
 order += "volume master"
 order += "load"
 order += "memory"
@@ -68,10 +67,6 @@ disk "/" {
     format = "/:%avail"
 }
 
-disk "/drv" {
-    format = "/drv:%avail"
-}
-
 load {
     format = "%5min"
 }
@@ -83,5 +78,5 @@ memory {
 }
 
 tztime local {
-    format = "%d-%m-%Y %H:%M:%S "
+    format = "%d.%m.%Y %H:%M:%S "
 }
