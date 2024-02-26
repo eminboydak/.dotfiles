@@ -30,8 +30,11 @@ xset m 1 4
 # start composite manager
 xcompmgr &
 
-# start i3-workspace-groups
-exec i3-workspace-groups server &
+# set background image
+~/.fehbg &
+
+# start picom
+exec picom &
 
 # start i3
 exec i3
