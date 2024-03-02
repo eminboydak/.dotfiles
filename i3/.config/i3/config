@@ -192,7 +192,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
-# bindsym $mod+Shift+m resize set 800 px 600 px
+bindsym $mod+Shift+m resize set 800 px 600 px
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
 
