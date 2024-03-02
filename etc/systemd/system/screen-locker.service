@@ -5,7 +5,7 @@ Description=Lock the screen automatically after a timeout
 Type=simple
 User=emin
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/xautolock -time 5 -locker /home/emşn/scripts/lock.sh -detectsleep
+ExecStart=/usr/bin/xautolock -time 5 -locker /home/emin/scripts/lock.sh -detectsleep
 Restart=on-failure
 RestartSec=5m
 
