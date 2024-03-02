@@ -88,7 +88,7 @@ bindsym $mod+shift+l exec ~/scripts/lock.sh
 bindsym $mod+shift+x exec ~/scripts/emoji-menu.sh
 
 # Take a screenshot
-bindsym $mod+shift+o exec ~/scripts/capture.sh
+bindsym $mod+shift+o exec flameshot gui
 
 # Kill focused window
 bindsym $mod+q kill
