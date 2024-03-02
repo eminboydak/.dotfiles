@@ -36,5 +36,8 @@ xcompmgr &
 # start picom
 exec picom &
 
+# notification deamon
+{ sleep 2; dunst; } &
+
 # start i3
 exec i3
