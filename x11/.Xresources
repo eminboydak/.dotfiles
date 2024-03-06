@@ -1,3 +1,7 @@
+! Cursor Theme
+Xcursor.theme: Catppuccin-Mocha-Green-Cursors
+
+! Color Theme
 ! Catpuccin Macchiato
 *background: #24273A
 *foreground: #CAD3F5
