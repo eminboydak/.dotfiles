@@ -14,8 +14,6 @@ Notification Daemon  : dunst
 Theme                : catppuccin
 ```
 
-## Installing
-
 ## Installation
 
 - `pacman -S stow`
@@ -27,7 +25,8 @@ Theme                : catppuccin
 
 ## Preview
 
-> [!TODO]
+> [!NOTE]
+> TODO
 
 <p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
 
