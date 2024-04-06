@@ -1,6 +1,6 @@
 # .dotfiles ![colors](https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png)
 
-This repository contains the configuration files and scripts that I use on my [Arch Linux workstation/s.](https://gist.github.com/eminboydak/e6c4b9c87f6dcf8c13fd991bbf5e9314).
+This repository contains the configuration files and scripts that I use on my [Arch Linux workstation(s)](https://gist.github.com/eminboydak/e6c4b9c87f6dcf8c13fd991bbf5e9314).
 
 ```
 Distribution         : Arch Linux
