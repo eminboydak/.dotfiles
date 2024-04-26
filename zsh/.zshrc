@@ -107,6 +107,7 @@ export FZF_BASE=/path/to/fzf/install/dir
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias ktunvpn="sudo openconnect --protocol=gp --user=e238221002025 vpn.ktun.edu.tr"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
