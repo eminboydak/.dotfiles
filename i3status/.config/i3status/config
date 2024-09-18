@@ -53,14 +53,14 @@ battery all {
     status_bat = "BAT"
     status_unk = "UNK"
     format = "%status %percentage %remaining"
-	last_full_capacity = true
+    last_full_capacity = true
 }
 
 volume master {
-	device = "default"
-	mixer = "Master"
-	mixer_idx = 0
-	format = "%volume"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+    format = "%volume"
 }
 
 disk "/" {
