@@ -19,7 +19,7 @@ general {
 # order += "ipv6"
 order += "ethernet _first_"
 order += "wireless _first_"
-order += "read_file updates"
+# order += "read_file updates"
 order += "battery all"
 order += "disk /"
 order += "volume master"
