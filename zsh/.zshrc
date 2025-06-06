@@ -115,3 +115,6 @@ alias ll="ls -la"
 
 export FZF_DEFAULT_COMMAND='fdfind --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
+
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
