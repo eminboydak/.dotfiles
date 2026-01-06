@@ -28,13 +28,10 @@ xset r rate 180 80
 xset m 1 4
 
 # start composite manager
-xcompmgr &
+picom &
 
 # set background image
 ~/.fehbg &
-
-# start picom
-exec picom &
 
 # notification deamon
 { sleep 2; dunst; } &
