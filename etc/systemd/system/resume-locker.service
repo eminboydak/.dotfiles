@@ -6,7 +6,7 @@ Before=suspend.target
 Type=forking
 User=emin
 Environment=DISPLAY=":0"
-ExecStart=/usr/bin/bash /home/emin/scripts/lock.sh
+ExecStart=/usr/bin/bash %h/scripts/lock.sh
 
 [Install]
 WantedBy=suspend.target
