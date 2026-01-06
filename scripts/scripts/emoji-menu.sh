@@ -68,7 +68,10 @@ done
 # Default DB
 if [ ! -e "$EMOJI_MENU_DB" ]; then
   echo "Downloading default emoji DB to $EMOJI_MENU_DB" >&2
-  wget -O "$EMOJI_MENU_DB" 'https://raw.githubusercontent.com/jchook/emoji-menu/master/data/emojis.txt'
+  if ! wget -O "$EMOJI_MENU_DB" 'https://raw.githubusercontent.com/jchook/emoji-menu/master/data/emojis.txt'; then
+    echo "Error: Failed to download emoji database. Please check your internet connection." >&2
+    exit 1
+  fi
 fi
 
 # Rofi can handle large inputs and emojis
