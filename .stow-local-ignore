@@ -24,3 +24,7 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+# AI assistant configs
+^/\.agents
+^/\.cursor
