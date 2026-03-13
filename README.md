@@ -25,8 +25,11 @@ Theme                : catppuccin
 
 ## Preview
 
-> [!NOTE]
-> TODO
+### 2026 Rice
+
+<p align="center">
+  <img src="assets/rice-2026.png" alt="2026 Rice" width="800"/>
+</p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
 
