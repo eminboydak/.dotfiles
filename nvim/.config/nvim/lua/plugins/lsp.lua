@@ -42,37 +42,19 @@ return {
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      local servers = {
-        lua_ls = {
-          settings = {
-            Lua = {
-              completion = { callSnippet = 'Replace' },
-            },
-          },
-        },
-        ts_ls = {},
-        html = {},
-        cssls = {},
-        tailwindcss = {},
-        jsonls = {},
-        yamlls = {},
-        dockerls = {},
-        docker_compose_language_service = {},
-        marksman = {},
-        pyright = {},
-        rust_analyzer = {},
-      }
+      local servers = require 'config.lsp-servers'
 
       require('mason').setup()
 
+      -- Mason-lspconfig setup with LSP servers only
       require('mason-lspconfig').setup {
         ensure_installed = vim.tbl_keys(servers),
         handlers = {
           function(server_name)
-            if not servers[server_name] then
+            local server = servers[server_name]
+            if not server then
               return
             end
-            local server = servers[server_name]
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
