@@ -5,3 +5,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
+
+-- Comment: Mason formatters are automatically installed via config.mason-formatters.lua
