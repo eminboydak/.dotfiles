@@ -33,6 +33,9 @@ picom &
 # set background image
 ~/.fehbg &
 
+# import X11 environment variables for systemd user services
+systemctl --user import-environment DISPLAY XAUTHORITY
+
 # notification deamon
 { sleep 2; dunst; } &
 
