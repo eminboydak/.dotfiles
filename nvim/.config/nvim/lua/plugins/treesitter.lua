@@ -1,9 +1,10 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     build = ':TSUpdate',
-    opts = {
-      ensure_installed = {
+    config = function()
+      local languages = {
         'bash',
         'c',
         'css',
@@ -13,7 +14,6 @@ return {
         'ini',
         'javascript',
         'json',
-        'jsonc',
         'lua',
         'luadoc',
         'markdown',
@@ -28,17 +28,25 @@ return {
         'vim',
         'vimdoc',
         'yaml',
-      },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-    },
-    config = function(_, opts)
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+      }
+
+      require('nvim-treesitter').install(languages):wait(300000)
+
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('treesitter', { clear = true }),
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
+
+      vim.api.nvim_create_autocmd('FileType', {
+        group = vim.api.nvim_create_augroup('treesitter-indent', { clear = true }),
+        callback = function()
+          pcall(function()
+            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end)
+        end,
+      })
     end,
   },
 }
