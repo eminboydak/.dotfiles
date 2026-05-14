@@ -118,3 +118,6 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
+
+# Created by `pipx` on 2026-05-14 13:32:35
+export PATH="$PATH:/home/emin/.local/bin"
