@@ -3,3 +3,9 @@ font/.fonts/.uuid
 
 # GTK
 gtk/.config/gtk-3.0/bookmarks
+
+# SSH — track ONLY the config + allowed_signers, never private keys, known_hosts, etc.
+# This guards against accidentally committing private key material.
+ssh/.ssh/*
+!ssh/.ssh/config
+!ssh/.ssh/allowed_signers

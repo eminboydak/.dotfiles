@@ -1,10 +1,18 @@
 [user]
     name = Muhammed Emin Boydak
-    email = emnbydk@gmail.com
+    email = me@eminboydak.com
+    signingkey = ~/.ssh/signing_ed25519.pub
 [gpg]
-    program = gpg
-# [url "ssh://git@github.com/"]
-#    insteadOf = https://github.com/
+    format = ssh
+[gpg "ssh"]
+    allowedSignersFile = ~/.ssh/allowed_signers
+# Force SSH for repos I own / can push to; third-party public clones stay HTTPS.
+# Add one insteadOf line per org you have write access to.
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/eminboydak/
+    insteadOf = https://github.com/stancona/
+    insteadOf = https://github.com/aeb-muhendislik/
+    insteadOf = https://github.com/vrogware/
 [url "ssh://git@gitlab.com/"]
     insteadOf = https://gitlab.com/
 [url "ssh://git@bitbucket.org/"]
@@ -61,6 +69,7 @@
 [commit]
     template = ~/.git-commit-template
     verbose = true
+    gpgsign = true
 [core]
     editor = nvim
 [core]
@@ -75,6 +84,8 @@
     colorMoved = default
 [init]
     defaultBranch = master
+[tag]
+    gpgsign = true
 [push]
     autoSetupRemote = true
     default = current
