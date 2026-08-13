@@ -2,7 +2,8 @@
 
 ## Repository Scope & Purpose
 
-- This repository is **exclusively** for managing personal Arch Linux dotfiles and configuration files.
+- This repository is for managing personal dotfiles and configuration files across both **Arch Linux** and **macOS** environments.
+- Common configurations (Neovim, Git, Zsh, Zellij, Kitty, Alacritty) are shared across operating systems, while platform-specific configurations are modularly organized using GNU Stow packages.
 - This is NOT an application repository; there is **no build, test, release, or deployment flow**.
 - **All work takes place in the main branch.** No branching or versioning is allowed.
 

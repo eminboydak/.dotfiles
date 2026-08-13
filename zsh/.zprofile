@@ -8,4 +8,4 @@ fi
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Created by `pipx` on 2026-05-14 13:32:35
-export PATH="$PATH:/home/emin/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"

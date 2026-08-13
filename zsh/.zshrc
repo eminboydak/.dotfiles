@@ -73,7 +73,6 @@ ZSH_THEME="bira"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    fzf
     zsh-syntax-highlighting
 )
 
@@ -83,7 +82,6 @@ source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export FZF_BASE=/path/to/fzf/install/dir
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -111,16 +109,11 @@ alias ktunvpn="sudo openconnect --protocol=gp --user=e238221002025 vpn.ktun.edu.
 alias ls="ls --color=auto"
 alias ll="ls -la"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export FZF_DEFAULT_COMMAND='fdfind --type f'
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
-
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 
 # Created by `pipx` on 2026-05-14 13:32:35
-export PATH="$PATH:/home/emin/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # nvm (Arch linux nvm package)
-source /usr/share/nvm/init-nvm.sh
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
