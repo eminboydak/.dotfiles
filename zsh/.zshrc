@@ -73,11 +73,11 @@ ZSH_THEME="bira"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    zsh-syntax-highlighting
+    # zsh-syntax-highlighting (disabled for now)
 )
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# [ -f $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -106,7 +106,11 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 alias ktunvpn="sudo openconnect --protocol=gp --user=e238221002025 vpn.ktun.edu.tr"
-alias ls="ls --color=auto"
+if ls --color=auto >/dev/null 2>&1; then
+    alias ls="ls --color=auto"
+else
+    alias ls="ls -G"
+fi
 alias ll="ls -la"
 
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
