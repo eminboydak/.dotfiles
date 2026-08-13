@@ -2,6 +2,8 @@ tap "jithin-sabu/tap"
 
 # CLI Formulae
 brew "btop"
+brew "gh"
+brew "git-delta"
 brew "neovim"
 brew "opencode"
 brew "stow"

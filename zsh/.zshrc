@@ -128,5 +128,12 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 # Created by `pipx` on 2026-05-14 13:32:35
 export PATH="$PATH:$HOME/.local/bin"
 
-# nvm (Arch linux nvm package)
-[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+# nvm cross-platform initialization (Arch Linux, Homebrew macOS/Linux, standard install)
+export NVM_DIR="$HOME/.nvm"
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    source /usr/share/nvm/init-nvm.sh
+elif [ -s "$NVM_DIR/nvm.sh" ]; then
+    source "$NVM_DIR/nvm.sh"
+elif [ -f /opt/homebrew/opt/nvm/nvm.sh ]; then
+    source /opt/homebrew/opt/nvm/nvm.sh
+fi
