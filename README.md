@@ -1,6 +1,8 @@
 # .dotfiles ![colors](https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png)
 
-This repository contains the configuration files and scripts that I use on my [Arch Linux workstation(s)](https://gist.github.com/eminboydak/e6c4b9c87f6dcf8c13fd991bbf5e9314).
+This repository contains the configuration files and scripts that I use on my [Arch Linux workstation(s)](https://gist.github.com/eminboydak/e6c4b9c87f6dcf8c13fd991bbf5e9314) and macOS environments.
+
+### Arch Linux
 
 ```
 Distribution         : Arch Linux
@@ -14,14 +16,37 @@ Notification Daemon  : dunst
 Theme                : catppuccin
 ```
 
+### macOS
+
+```
+Distribution         : macOS
+Shell                : zsh
+Terminal             : kitty
+Terminal Multiplexer : zellij
+Resource Monitor     : btop
+Editor               : neovim
+Theme                : catppuccin
+```
+
 ## Installation
 
-- `pacman -S stow`
+### Arch Linux
+
+- `sudo pacman -S stow`
 - `cd "$HOME"`
 - `git clone --depth 1 https://github.com/eminboydak/.dotfiles`
 - `cd .dotfiles/`
 - `stow bash git i3 ...`
 - `stow etc -t /etc/`
+
+### macOS
+
+- `brew install stow`
+- `cd "$HOME"`
+- `git clone --depth 1 https://github.com/eminboydak/.dotfiles`
+- `cd .dotfiles/`
+- `stow brew git zsh kitty zellij nvim ...`
+- `brew bundle`
 
 ## Preview
 
@@ -32,4 +57,3 @@ Theme                : catppuccin
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
-
