@@ -16,7 +16,7 @@ bold_italic = { family = "Fira Code", style = "Bold Italic" }
 
 [window]
 padding = { x = 8, y = 8 }
-option_as_alt = "Both"
+option_as_alt = "OnlyLeft"
 
 [cursor]
 style = "Beam"
